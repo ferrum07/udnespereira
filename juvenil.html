@@ -8,21 +8,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
+  .season-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 1rem; margin-bottom: 3rem; }
+  .summary-card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem; text-align: center; }
+  .summary-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 2.2rem; line-height: 1; }
+  .summary-num.green { color: var(--green); }
+  .summary-num.red { color: var(--red); }
+  .summary-num.white { color: var(--white); }
+  .summary-label { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-top: .3rem; }
+  .lider-banner {
+    background: linear-gradient(135deg, var(--green-dim), rgba(62,217,104,.08));
+    border: 1px solid var(--green-mid); border-radius: 8px;
+    padding: 1.2rem 1.6rem; margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .lider-icon { font-size: 2rem; }
+  .lider-text strong { color: var(--green); font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.1rem; display: block; }
+  .lider-text span { font-size: .85rem; color: var(--muted); }
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
-  .block-title {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .9rem;
-    text-transform: uppercase; color: var(--muted); letter-spacing: .1em;
-    margin-bottom: .8rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border);
-  }
-  .edit-notice {
-    background: rgba(62,217,104,.05); border: 1px dashed var(--green-mid);
-    border-radius: 6px; padding: 1.2rem 1.4rem; margin-bottom: 1rem;
-    font-size: .82rem; color: var(--muted); line-height: 1.6;
-  }
-  .edit-notice strong { color: var(--green); }
-  /* Plantilla editable */
-  .plantilla-edit-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; padding: .6rem .8rem; border-bottom: 1px solid var(--border); align-items: center; font-size: .85rem; }
-  .plantilla-edit-row:first-child { background: rgba(255,255,255,.02); font-weight: 600; font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+  .block-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .9rem; text-transform: uppercase; color: var(--muted); letter-spacing: .1em; margin-bottom: .8rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
   @media(max-width:900px){ .two-col{grid-template-columns:1fr} }
 </style>
 </head>
@@ -32,68 +35,103 @@
 <main>
   <div class="page-header">
     <div class="page-header-inner">
-      <p class="section-tag">Cantera · U.D. Nespereira</p>
+      <p class="section-tag">Cantera · Temporada 2025/2026 · Tercera Futgal Vigo Gr.3</p>
       <h1>Equipo <span>Juvenil</span></h1>
-      <p>Resultados, clasificación y plantilla del equipo juvenil.</p>
+      <p>Plantilla, clasificación y resultados del equipo juvenil. Líderes invictos hasta la jornada 15.</p>
     </div>
   </div>
 
-  <!-- RESULTADOS + CLASIFICACIÓN -->
+  <!-- RESUMEN -->
   <section>
     <div class="section-inner">
-      <p class="section-tag">Temporada 2025/2026</p>
-      <h2 class="section-title">Resultados &<br>Clasificación</h2>
+      <div class="lider-banner">
+        <div class="lider-icon">🏆</div>
+        <div class="lider-text">
+          <strong>¡1º clasificados! · 41 puntos · 0 derrotas</strong>
+          <span>Tercera Futgal Vigo Gr.3 Juvenil · Datos hasta Jornada 15 (20/12/2025)</span>
+        </div>
+      </div>
+
+      <p class="section-tag">Resumen temporada 2025/26 · hasta J15</p>
+      <h2 class="section-title">La Temporada</h2>
       <div class="section-divider"></div>
+      <div class="season-summary">
+        <div class="summary-card"><div class="summary-num white">15</div><div class="summary-label">Partidos jugados</div></div>
+        <div class="summary-card"><div class="summary-num green">13</div><div class="summary-label">Victorias</div></div>
+        <div class="summary-card"><div class="summary-num white">2</div><div class="summary-label">Empates</div></div>
+        <div class="summary-card"><div class="summary-num green">0</div><div class="summary-label">Derrotas</div></div>
+        <div class="summary-card"><div class="summary-num green">62</div><div class="summary-label">Goles a favor</div></div>
+        <div class="summary-card"><div class="summary-num white">14</div><div class="summary-label">Goles en contra</div></div>
+        <div class="summary-card"><div class="summary-num green">41</div><div class="summary-label">Puntos</div></div>
+        <div class="summary-card"><div class="summary-num green">1º</div><div class="summary-label">Posición</div></div>
+      </div>
 
       <div class="two-col">
         <!-- RESULTADOS -->
         <div>
           <div class="block-title">Últimos Partidos</div>
-          <div class="edit-notice">
-            📝 Añade aquí los resultados reales del Juvenil. Copia el bloque <strong>&lt;div class="result-item"&gt;</strong> para cada partido. Usa <strong>win</strong>, <strong>draw</strong> o <strong>loss</strong> como clase según el resultado.
-          </div>
-
-          <!-- EJEMPLO — duplica este bloque para añadir partidos -->
           <div class="result-item win">
-            <div class="result-home nes">U.D. Nespereira Juv.</div>
-            <div class="result-score-wrap"><div class="result-score">3 – 1</div><div class="result-date">Fecha · Jornada</div></div>
-            <div class="result-away">Rival</div>
+            <div class="result-home nes">U.D. Nespereira</div>
+            <div class="result-score-wrap"><div class="result-score">11 – 0</div><div class="result-date">20/12/2025 · J15</div></div>
+            <div class="result-away">Goián C.F. B</div>
+          </div>
+          <div class="result-item win">
+            <div class="result-home">S.D. Ponteareas D</div>
+            <div class="result-score-wrap"><div class="result-score">1 – 2</div><div class="result-date">13/12/2025 · J14</div></div>
+            <div class="result-away nes">U.D. Nespereira</div>
+          </div>
+          <div class="result-item win">
+            <div class="result-home nes">U.D. Nespereira</div>
+            <div class="result-score-wrap"><div class="result-score">3 – 0</div><div class="result-date">6/12/2025 · J13</div></div>
+            <div class="result-away">A.D. Tomiño B</div>
           </div>
           <div class="result-item draw">
-            <div class="result-home">Rival</div>
-            <div class="result-score-wrap"><div class="result-score">1 – 1</div><div class="result-date">Fecha · Jornada</div></div>
-            <div class="result-away nes">U.D. Nespereira Juv.</div>
+            <div class="result-home">Nieves C.F.</div>
+            <div class="result-score-wrap"><div class="result-score">1 – 1</div><div class="result-date">29/11/2025 · J12</div></div>
+            <div class="result-away nes">U.D. Nespereira</div>
           </div>
-          <div class="result-item loss">
-            <div class="result-home nes">U.D. Nespereira Juv.</div>
-            <div class="result-score-wrap"><div class="result-score">0 – 2</div><div class="result-date">Fecha · Jornada</div></div>
-            <div class="result-away">Rival</div>
+          <div class="result-item win">
+            <div class="result-home nes">U.D. Nespereira</div>
+            <div class="result-score-wrap"><div class="result-score">4 – 0</div><div class="result-date">22/11/2025 · J11</div></div>
+            <div class="result-away">U.D. Ribera B</div>
           </div>
-          <!-- FIN EJEMPLO -->
-
-          <div style="margin-top:1rem">
-            <a href="https://www.siguetuliga.com/equipo/cd-nespereira" target="_blank" style="font-size:.78rem;color:var(--green);text-decoration:none">Ver todos los resultados en siguetuliga.com →</a>
+          <div class="result-item win">
+            <div class="result-home">Racing Vilariño B</div>
+            <div class="result-score-wrap"><div class="result-score">0 – 5</div><div class="result-date">15/11/2025 · J10</div></div>
+            <div class="result-away nes">U.D. Nespereira</div>
           </div>
         </div>
 
         <!-- CLASIFICACIÓN -->
         <div>
-          <div class="block-title">Clasificación · Temporada 2025/26</div>
-          <div class="edit-notice">
-            📝 Sustituye los datos de ejemplo con la clasificación real del grupo. Añade o quita filas <strong>&lt;tr&gt;</strong> según los equipos del grupo.
-          </div>
+          <div class="block-title">Clasificación · J15 · 20/12/2025</div>
           <table class="tabla-clas">
             <thead>
               <tr><th>#</th><th>Equipo</th><th>PJ</th><th>G</th><th>E</th><th>P</th><th>Pts</th></tr>
             </thead>
             <tbody>
-              <tr><td><span class="pos g">1</span></td><td class="tname">Equipo 1</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pts">—</td></tr>
-              <tr><td><span class="pos n">2</span></td><td class="tname">Equipo 2</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pts">—</td></tr>
-              <tr class="highlight"><td><span class="pos n">?</span></td><td class="tname">U.D. Nespereira Juv.</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pts">—</td></tr>
-              <tr><td><span class="pos n">—</span></td><td class="tname">Equipo X</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pts">—</td></tr>
+              <tr class="highlight"><td><span class="pos g">1</span></td><td class="tname asc">U.D. Nespereira ★</td><td>15</td><td>13</td><td>2</td><td>0</td><td class="pts">41</td></tr>
+              <tr><td><span class="pos n">2</span></td><td class="tname">A.D. Vila do Corpus</td><td>15</td><td>13</td><td>1</td><td>1</td><td class="pts">40</td></tr>
+              <tr><td><span class="pos n">3</span></td><td class="tname">Club Louro Tameiga</td><td>15</td><td>10</td><td>1</td><td>4</td><td class="pts">31</td></tr>
+              <tr><td><span class="pos n">4</span></td><td class="tname">C.F. Cañiza</td><td>15</td><td>9</td><td>2</td><td>4</td><td class="pts">29</td></tr>
+              <tr><td><span class="pos n">5</span></td><td class="tname">Nieves C.F.</td><td>15</td><td>8</td><td>3</td><td>4</td><td class="pts">27</td></tr>
+              <tr><td><span class="pos n">6</span></td><td class="tname">C.D. Ribadelouro</td><td>15</td><td>9</td><td>0</td><td>6</td><td class="pts">27</td></tr>
+              <tr><td><span class="pos n">7</span></td><td class="tname">U.D. Mos B</td><td>15</td><td>7</td><td>3</td><td>5</td><td class="pts">24</td></tr>
+              <tr><td><span class="pos n">8</span></td><td class="tname">E.D. Salvaterra B</td><td>15</td><td>7</td><td>3</td><td>5</td><td class="pts">24</td></tr>
+              <tr><td><span class="pos n">9</span></td><td class="tname">Erizana C.F. B</td><td>15</td><td>7</td><td>3</td><td>5</td><td class="pts">24</td></tr>
+              <tr><td><span class="pos n">10</span></td><td class="tname">Santiaguiño Guizán</td><td>15</td><td>7</td><td>0</td><td>8</td><td class="pts">21</td></tr>
+              <tr><td><span class="pos n">11</span></td><td class="tname">Gondomar F.B. C</td><td>15</td><td>6</td><td>2</td><td>7</td><td class="pts">20</td></tr>
+              <tr><td><span class="pos n">12</span></td><td class="tname">A.D. Tomiño B</td><td>15</td><td>5</td><td>3</td><td>7</td><td class="pts">18</td></tr>
+              <tr><td><span class="pos n">13</span></td><td class="tname">S.D. Ponteareas D</td><td>15</td><td>2</td><td>1</td><td>12</td><td class="pts">7</td></tr>
+              <tr><td><span class="pos n">14</span></td><td class="tname">U.D. Ribera B</td><td>15</td><td>2</td><td>1</td><td>12</td><td class="pts">7</td></tr>
+              <tr><td><span class="pos n">15</span></td><td class="tname">Racing de Vilariño B</td><td>15</td><td>2</td><td>0</td><td>13</td><td class="pts">6</td></tr>
+              <tr><td><span class="pos n">16</span></td><td class="tname">Goián C.F. B</td><td>15</td><td>0</td><td>1</td><td>14</td><td class="pts">1</td></tr>
             </tbody>
           </table>
-          <p style="font-size:.68rem;color:var(--muted);margin-top:.7rem">Datos a rellenar con la clasificación oficial de la temporada.</p>
+          <div class="legend">
+            <div class="legend-item"><div class="legend-dot" style="background:rgba(62,217,104,.3);border:1px solid var(--green)"></div>U.D. Nespereira · Líderes</div>
+          </div>
+          <p style="font-size:.68rem;color:var(--muted);margin-top:.6rem">Fuente: lapreferente.com · Datos hasta J15 (20/12/2025)</p>
         </div>
       </div>
     </div>
@@ -102,13 +140,9 @@
   <!-- PLANTILLA -->
   <section class="bg-surface">
     <div class="section-inner">
-      <p class="section-tag">Temporada 2025/2026</p>
+      <p class="section-tag">Temporada 2025/2026 · 17 jugadores</p>
       <h2 class="section-title">Plantilla</h2>
       <div class="section-divider"></div>
-
-      <div class="edit-notice" style="margin-bottom:1.5rem">
-        📝 Rellena la plantilla del Juvenil con los jugadores reales. Copia las filas <strong>&lt;tr&gt;</strong> y cambia el nombre y posición. Las posiciones disponibles son: <strong>dem-por</strong> (portero), <strong>dem-def</strong> (defensa), <strong>dem-med</strong> (centrocampista), <strong>dem-del</strong> (delantero).
-      </div>
 
       <div style="overflow-x:auto">
         <table class="plantilla-table">
@@ -117,28 +151,41 @@
               <th>Jugador</th>
               <th>Posición</th>
               <th class="center">PJ</th>
+              <th class="center">Min.</th>
               <th class="center">Goles</th>
               <th class="center">TA</th>
               <th class="center">TR</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td colspan="6" class="position-group-title">Porteros</td></tr>
-            <tr><td class="player-name">Jugador 1</td><td><span class="demarcacion-badge dem-por">Portero</span></td><td class="center stat-num">—</td><td class="center stat-num gol-count">—</td><td class="center stat-num ta-count">—</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td colspan="7" class="position-group-title">Porteros</td></tr>
+            <tr><td class="player-name">Lago · Ismael Lago Domínguez</td><td><span class="demarcacion-badge dem-por">Portero</span></td><td class="center stat-num">31</td><td class="center stat-num">2747</td><td class="center stat-num gol-count">—</td><td class="center stat-num ta-count">2</td><td class="center stat-num tr-count">1</td></tr>
 
-            <tr><td colspan="6" class="position-group-title">Defensas</td></tr>
-            <tr><td class="player-name">Jugador 2</td><td><span class="demarcacion-badge dem-def">Defensa</span></td><td class="center stat-num">—</td><td class="center stat-num gol-count">—</td><td class="center stat-num ta-count">—</td><td class="center stat-num tr-count">—</td></tr>
-            <tr><td class="player-name">Jugador 3</td><td><span class="demarcacion-badge dem-def">Defensa</span></td><td class="center stat-num">—</td><td class="center stat-num gol-count">—</td><td class="center stat-num ta-count">—</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td colspan="7" class="position-group-title">Defensas</td></tr>
+            <tr><td class="player-name">Bruno Luis · Bruno Rodriguez Luis</td><td><span class="demarcacion-badge dem-def">Defensa</span></td><td class="center stat-num">30</td><td class="center stat-num">2540</td><td class="center stat-num gol-count">4</td><td class="center stat-num ta-count">4</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td class="player-name">Iván Vieitez · Iván Rodríguez Vieitez</td><td><span class="demarcacion-badge dem-def">Defensa</span></td><td class="center stat-num">30</td><td class="center stat-num">2138</td><td class="center stat-num gol-count">2</td><td class="center stat-num ta-count">3</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td class="player-name">Alex Montenegro · Alex Montenegro Padrao</td><td><span class="demarcacion-badge dem-def">Defensa</span></td><td class="center stat-num">31</td><td class="center stat-num">2468</td><td class="center stat-num gol-count">2</td><td class="center stat-num ta-count">1</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td class="player-name">Javier Soutullo · Javier Soutullo Garcia</td><td><span class="demarcacion-badge dem-def">Defensa</span></td><td class="center stat-num">27</td><td class="center stat-num">1749</td><td class="center stat-num gol-count">—</td><td class="center stat-num ta-count">—</td><td class="center stat-num tr-count">1</td></tr>
 
-            <tr><td colspan="6" class="position-group-title">Centrocampistas</td></tr>
-            <tr><td class="player-name">Jugador 4</td><td><span class="demarcacion-badge dem-med">Centro</span></td><td class="center stat-num">—</td><td class="center stat-num gol-count">—</td><td class="center stat-num ta-count">—</td><td class="center stat-num tr-count">—</td></tr>
-            <tr><td class="player-name">Jugador 5</td><td><span class="demarcacion-badge dem-med">Centro</span></td><td class="center stat-num">—</td><td class="center stat-num gol-count">—</td><td class="center stat-num ta-count">—</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td colspan="7" class="position-group-title">Centrocampistas</td></tr>
+            <tr><td class="player-name" style="color:var(--green);font-weight:600">Yago Gabián · Yago Gabián Domínguez ⭐</td><td><span class="demarcacion-badge dem-med">Media punta</span></td><td class="center stat-num">27</td><td class="center stat-num">2236</td><td class="center stat-num gol-count">25</td><td class="center stat-num ta-count">6</td><td class="center stat-num tr-count">3</td></tr>
+            <tr><td class="player-name">Diego Toucedo · Diego Toucedo Torres</td><td><span class="demarcacion-badge dem-med">Centro</span></td><td class="center stat-num">32</td><td class="center stat-num">2703</td><td class="center stat-num gol-count">10</td><td class="center stat-num ta-count">3</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td class="player-name">Costa · Alex Mouriño Costa</td><td><span class="demarcacion-badge dem-med">Centro</span></td><td class="center stat-num">27</td><td class="center stat-num">2102</td><td class="center stat-num gol-count">7</td><td class="center stat-num ta-count">11</td><td class="center stat-num tr-count">2</td></tr>
+            <tr><td class="player-name">Damián Toucedo · Damián Toucedo Amoedo</td><td><span class="demarcacion-badge dem-med">Centro</span></td><td class="center stat-num">29</td><td class="center stat-num">2113</td><td class="center stat-num gol-count">7</td><td class="center stat-num ta-count">4</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td class="player-name">Francisco Otero · Francisco Otero Rodriguez</td><td><span class="demarcacion-badge dem-med">Centro</span></td><td class="center stat-num">31</td><td class="center stat-num">2616</td><td class="center stat-num gol-count">7</td><td class="center stat-num ta-count">3</td><td class="center stat-num tr-count">1</td></tr>
+            <tr><td class="player-name">Samuel Paz · Samuel Paz Alvarez</td><td><span class="demarcacion-badge dem-med">Centro</span></td><td class="center stat-num">25</td><td class="center stat-num">1552</td><td class="center stat-num gol-count">3</td><td class="center stat-num ta-count">2</td><td class="center stat-num tr-count">—</td></tr>
 
-            <tr><td colspan="6" class="position-group-title">Delanteros</td></tr>
-            <tr><td class="player-name">Jugador 6</td><td><span class="demarcacion-badge dem-del">Delantero</span></td><td class="center stat-num">—</td><td class="center stat-num gol-count">—</td><td class="center stat-num ta-count">—</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td colspan="7" class="position-group-title">Delanteros</td></tr>
+            <tr><td class="player-name" style="color:var(--green);font-weight:600">Samuel · Samuel Soto Miguez ⭐</td><td><span class="demarcacion-badge dem-del">Delantero</span></td><td class="center stat-num">32</td><td class="center stat-num">2768</td><td class="center stat-num gol-count">34</td><td class="center stat-num ta-count">4</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td class="player-name">Iker · Iker Rodriguez Iglesias</td><td><span class="demarcacion-badge dem-del">Delantero</span></td><td class="center stat-num">30</td><td class="center stat-num">2486</td><td class="center stat-num gol-count">1</td><td class="center stat-num ta-count">1</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td class="player-name">Hugo Gonçalves · Hugo Gonçalves Otero</td><td><span class="demarcacion-badge dem-del">Delantero</span></td><td class="center stat-num">18</td><td class="center stat-num">665</td><td class="center stat-num gol-count">5</td><td class="center stat-num ta-count">—</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td class="player-name">Mario Balado · Mario Balado Alonso</td><td><span class="demarcacion-badge dem-del">Delantero</span></td><td class="center stat-num">7</td><td class="center stat-num">310</td><td class="center stat-num gol-count">1</td><td class="center stat-num ta-count">—</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td class="player-name">Adrián González · Adrián González Pérez</td><td><span class="demarcacion-badge dem-del">Delantero</span></td><td class="center stat-num">5</td><td class="center stat-num">224</td><td class="center stat-num gol-count">—</td><td class="center stat-num ta-count">1</td><td class="center stat-num tr-count">—</td></tr>
+            <tr><td class="player-name">Xoán Vilaboa · Xoán Vilaboa Areal</td><td><span class="demarcacion-badge dem-del">Delantero</span></td><td class="center stat-num">6</td><td class="center stat-num">120</td><td class="center stat-num gol-count">—</td><td class="center stat-num ta-count">—</td><td class="center stat-num tr-count">—</td></tr>
           </tbody>
         </table>
       </div>
+      <p style="font-size:.7rem;color:var(--muted);margin-top:1rem">⭐ Samuel: 34 goles · Yago Gabián: 25 goles · Fuente: lapreferente.com · Temp. 2025/26</p>
     </div>
   </section>
 </main>
