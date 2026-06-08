@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Club – U.D. Nespereira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .club-hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
+  .club-hero-grid img { width: 160px; filter: drop-shadow(0 0 30px rgba(62,217,104,.2)); }
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .staff-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1.5rem; display: flex; align-items: center; gap: 1.1rem;
+  }
+  .staff-avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--green-dim); border: 2px solid var(--green-mid);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; flex-shrink: 0;
+  }
+  .staff-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--white); }
+  .staff-role { font-size: .73rem; color: var(--muted); text-transform: uppercase; letter-spacing: .09em; margin-top: .15rem; }
+  .colores-demo { display: flex; gap: .75rem; margin-top: .8rem; }
+  .color-swatch { width: 36px; height: 36px; border-radius: 6px; border: 2px solid var(--border); }
+  .timeline { margin-top: 1.5rem; }
+  .timeline-item { display: flex; gap: 1.2rem; padding-bottom: 1.5rem; position: relative; }
+  .timeline-item:not(:last-child)::before {
+    content: ''; position: absolute; left: 15px; top: 28px; bottom: 0; width: 1px; background: var(--border);
+  }
+  .timeline-dot {
+    width: 30px; height: 30px; border-radius: 50%; background: var(--green-dim);
+    border: 2px solid var(--green-mid); display: flex; align-items: center;
+    justify-content: center; font-size: .7rem; flex-shrink: 0; margin-top: .1rem;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; color: var(--green);
+  }
+  .timeline-content { flex: 1; }
+  .timeline-year { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .8rem; color: var(--green); letter-spacing: .1em; }
+  .timeline-text { font-size: .88rem; color: var(--text); line-height: 1.6; margin-top: .2rem; }
+  @media(max-width:900px){ .club-hero-grid{grid-template-columns:1fr} .club-hero-grid img{display:none} }
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+
+<main>
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="club-hero-grid">
+        <div>
+          <p class="section-tag">Unión Deportiva Nespereira · Desde 1982</p>
+          <h1>El <span>Club</span></h1>
+          <p>Historia, identidad y todo lo que define al club de Pazos de Borbén.</p>
+        </div>
+        <img src="assets/logo.jpg" alt="Escudo U.D. Nespereira">
+      </div>
+    </div>
+  </div>
+
+  <!-- IDENTIDAD -->
+  <section>
+    <div class="section-inner">
+      <p class="section-tag">Quiénes somos</p>
+      <h2 class="section-title">Nuestra Identidad</h2>
+      <div class="section-divider"></div>
+      <div class="grid-2" style="align-items:start;gap:3rem">
+        <div>
+          <p style="margin-bottom:1rem;line-height:1.8;font-size:.97rem">La <strong style="color:var(--white)">Unión Deportiva Nespereira</strong> es el club de fútbol de la parroquia de Nespereira, perteneciente al municipio de <strong style="color:var(--white)">Pazos de Borbén</strong>, en la provincia de Pontevedra, Galicia.</p>
+          <p style="margin-bottom:1rem;line-height:1.8;font-size:.97rem">Fundado en <strong style="color:var(--white)">1982</strong>, el club lleva más de cuatro décadas siendo un punto de encuentro para los vecinos de la zona, apostando por el fútbol como herramienta de cohesión social y desarrollo deportivo local.</p>
+          <p style="line-height:1.8;font-size:.97rem">El club cuenta actualmente con <strong style="color:var(--white)">dos equipos</strong>: el Sénior, que compite en la Tercera Futgal Grupo 2 Vigo, y el Juvenil, que participa en la categoría autonómica gallega.</p>
+          <div style="margin-top:1.5rem">
+            <div class="section-tag" style="margin-bottom:.5rem">Colores oficiales</div>
+            <div class="colores-demo">
+              <div><div class="color-swatch" style="background:#1a6b30"></div><div style="font-size:.7rem;color:var(--muted);text-align:center;margin-top:.3rem">Verde</div></div>
+              <div><div class="color-swatch" style="background:#111111"></div><div style="font-size:.7rem;color:var(--muted);text-align:center;margin-top:.3rem">Negro</div></div>
+              <div><div class="color-swatch" style="background:#f0f0f0"></div><div style="font-size:.7rem;color:var(--muted);text-align:center;margin-top:.3rem">Blanco</div></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="info-grid" style="grid-template-columns:1fr 1fr">
+            <div class="info-card"><div class="info-card-icon">📅</div><div class="info-card-label">Fundación</div><div class="info-card-value">1982</div></div>
+            <div class="info-card"><div class="info-card-icon">📍</div><div class="info-card-label">Municipio</div><div class="info-card-value">Pazos de Borbén</div></div>
+            <div class="info-card"><div class="info-card-icon">🏟️</div><div class="info-card-label">Campo</div><div class="info-card-value">Chan do Arieiro</div></div>
+            <div class="info-card"><div class="info-card-icon">🗺️</div><div class="info-card-label">Provincia</div><div class="info-card-value">Pontevedra</div></div>
+            <div class="info-card"><div class="info-card-icon">🏆</div><div class="info-card-label">Categoría Sénior</div><div class="info-card-value">3ª Futgal Gr.2 Vigo</div></div>
+            <div class="info-card"><div class="info-card-icon">⚽</div><div class="info-card-label">Equipos</div><div class="info-card-value">Sénior + Juvenil</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section class="bg-surface">
+    <div class="section-inner">
+      <p class="section-tag">Trayectoria</p>
+      <h2 class="section-title">Historia del Club</h2>
+      <div class="section-divider"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot">82</div>
+          <div class="timeline-content">
+            <div class="timeline-year">1982 · Fundación</div>
+            <div class="timeline-text">Nace la Unión Deportiva Nespereira en la parroquia de Nespereira, Pazos de Borbén. El club comienza su andadura en las categorías regionales gallegas con un único equipo sénior.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">⚽</div>
+          <div class="timeline-content">
+            <div class="timeline-year">Décadas de consolidación</div>
+            <div class="timeline-text">El club se consolida en la comarca del Vigo interior, manteniendo su presencia en la Tercera Futgal y desarrollando una cantera cada vez más activa con el equipo Juvenil.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">25</div>
+          <div class="timeline-content">
+            <div class="timeline-year">Temporada 2025/2026</div>
+            <div class="timeline-text">El primer equipo disputa la Tercera Futgal Grupo 2 Vigo con 24 jugadores en plantilla, bajo la dirección de Alfredo Ledo Losada. El máximo goleador, Arregui, anota 12 tantos durante la temporada.</div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:.8rem;color:var(--muted);margin-top:1rem;font-style:italic">¿Tienes más información sobre la historia del club? Edita este archivo para añadirla.</p>
+    </div>
+  </section>
+
+  <!-- CUERPO TÉCNICO -->
+  <section>
+    <div class="section-inner">
+      <p class="section-tag">Temporada 2025/2026</p>
+      <h2 class="section-title">Cuerpo Técnico</h2>
+      <div class="section-divider"></div>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <div class="staff-avatar">🧑‍💼</div>
+          <div>
+            <div class="staff-name">Alfredo Ledo Losada</div>
+            <div class="staff-role">Entrenador · Sénior A</div>
+          </div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-avatar">📋</div>
+          <div>
+            <div class="staff-name">Miguel Ángel Soto Acevedo</div>
+            <div class="staff-role">Delegado de Campo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTADIO -->
+  <section class="bg-surface">
+    <div class="section-inner">
+      <p class="section-tag">Instalaciones</p>
+      <h2 class="section-title">Chan do Arieiro</h2>
+      <div class="section-divider"></div>
+      <div class="grid-2" style="align-items:start;gap:2rem">
+        <div>
+          <p style="line-height:1.8;font-size:.96rem;margin-bottom:1rem">El <strong style="color:var(--white)">Chan do Arieiro</strong> es el campo donde la U.D. Nespereira disputa sus partidos como local. Situado en la parroquia de Nespereira, en el municipio de Pazos de Borbén.</p>
+          <p style="line-height:1.8;font-size:.96rem">Para llegar al campo, puedes consultar la ubicación en Google Maps o contactar con el club a través de Instagram.</p>
+          <div style="margin-top:1.5rem;display:flex;gap:.8rem;flex-wrap:wrap">
+            <a href="https://www.instagram.com/u.d_nespereira/" target="_blank" class="btn-primary" style="font-size:.82rem;padding:.6rem 1.3rem">Preguntar por Instagram</a>
+            <a href="contacto.html" class="btn-outline" style="font-size:.82rem;padding:.6rem 1.3rem">Ver Contacto</a>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Chan+do+Arieiro+Pazos+de+Borben+Pontevedra" target="_blank" class="map-placeholder">
+          <div class="map-icon">🗺️</div>
+          <strong>Chan do Arieiro</strong>
+          <span style="font-size:.8rem">Nespereira, Pazos de Borbén</span>
+          <span style="font-size:.73rem;color:var(--green)">Abrir en Google Maps →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a href="index.html" class="footer-logo"><img src="assets/logo.jpg" alt=""><span>U.D. Nespereira</span></a>
+  <p>Pazos de Borbén · Pontevedra · Galicia</p>
+  <p>© 2025/26 Unión Deportiva Nespereira</p>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

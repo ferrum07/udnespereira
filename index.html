@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U.D. Nespereira – Inicio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 6rem 2.5rem 4rem; position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 55% 65% at 75% 45%, rgba(26,136,64,.14) 0%, transparent 70%),
+      radial-gradient(ellipse 35% 50% at 5% 90%, rgba(62,217,104,.05) 0%, transparent 55%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: .035;
+    background-image:
+      repeating-linear-gradient(0deg, #3ed968 0, transparent 1px, transparent 65px, #3ed968 66px),
+      repeating-linear-gradient(90deg, #3ed968 0, transparent 1px, transparent 65px, #3ed968 66px);
+  }
+  .hero-inner {
+    position: relative; max-width: 1100px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: var(--green-dim); border: 1px solid var(--green-mid);
+    padding: .3rem 1rem; border-radius: 2px;
+    font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--green); margin-bottom: 1.4rem;
+  }
+  .hero-tag::before {
+    content: ''; width: 7px; height: 7px; background: var(--green);
+    border-radius: 50%; animation: blink 1.6s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1}50%{opacity:.25} }
+  h1.hero-title {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+    text-transform: uppercase; font-size: clamp(3rem, 9vw, 7.5rem);
+    line-height: .9; color: var(--white); letter-spacing: -.01em; margin-bottom: 1.4rem;
+  }
+  h1.hero-title .g { color: var(--green); }
+  .hero-sub {
+    max-width: 430px; font-size: .98rem; color: var(--muted);
+    font-weight: 300; margin-bottom: 2.2rem; line-height: 1.75;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .hero-stats {
+    display: flex; gap: 2.5rem; padding-top: 2rem;
+    border-top: 1px solid var(--border); flex-wrap: wrap;
+  }
+  .hero-stat-num {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+    font-size: 2rem; color: var(--green); line-height: 1;
+  }
+  .hero-stat-label { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-top: .15rem; }
+  .hero-escudo img {
+    width: min(210px, 26vw);
+    filter: drop-shadow(0 0 50px rgba(62,217,104,.22)) drop-shadow(0 6px 24px rgba(0,0,0,.7));
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)} }
+
+  /* ── ÚLTIMOS RESULTADOS ── */
+  #ultimos { background: var(--surface); }
+  .results-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .results-col h3 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .95rem;
+    text-transform: uppercase; color: var(--muted); letter-spacing: .1em;
+    margin-bottom: .8rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .results-col h3 a { font-size: .7rem; color: var(--green); text-decoration: none; font-weight: 500; }
+  .results-col h3 a:hover { text-decoration: underline; }
+
+  /* ── QUICK LINKS ── */
+  #quick { }
+  .quick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .quick-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 2rem 1.5rem; text-decoration: none; color: var(--text);
+    transition: border-color .2s, transform .2s; position: relative; overflow: hidden;
+  }
+  .quick-card:hover { border-color: var(--green-mid); transform: translateY(-3px); }
+  .quick-card::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--green); transform: scaleX(0); transform-origin: left; transition: transform .3s;
+  }
+  .quick-card:hover::after { transform: scaleX(1); }
+  .quick-icon { font-size: 1.8rem; margin-bottom: .8rem; }
+  .quick-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--white); text-transform: uppercase; margin-bottom: .3rem; }
+  .quick-desc { font-size: .82rem; color: var(--muted); }
+  .quick-arrow { position: absolute; bottom: 1.2rem; right: 1.2rem; color: var(--green-mid); font-size: 1.1rem; transition: transform .2s; }
+  .quick-card:hover .quick-arrow { transform: translateX(4px); }
+
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr}
+    .hero-escudo{display:none}
+    .results-row{grid-template-columns:1fr}
+    #hero{padding:5rem 1.2rem 3rem}
+  }
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+
+<main>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">Tercera Futgal · Grupo 2 Vigo · Temp. 2025/26</div>
+        <h1 class="hero-title">Unión<br><span class="g">Deportiva</span><br>Nespereira</h1>
+        <p class="hero-sub">Orgullo de Pazos de Borbén. Fútbol gallego con raíces, cantera y compromiso desde 1982.</p>
+        <div class="hero-actions">
+          <a href="senior.html" class="btn-primary">Equipo Sénior</a>
+          <a href="juvenil.html" class="btn-outline">Equipo Juvenil</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hero-stat-num">1982</div><div class="hero-stat-label">Fundación</div></div>
+          <div><div class="hero-stat-num">2</div><div class="hero-stat-label">Equipos</div></div>
+          <div><div class="hero-stat-num">3ª</div><div class="hero-stat-label">Categoría sénior</div></div>
+          <div><div class="hero-stat-num">12</div><div class="hero-stat-label">Goles · Arregui</div></div>
+        </div>
+      </div>
+      <div class="hero-escudo">
+        <img src="assets/logo.jpg" alt="Escudo U.D. Nespereira">
+      </div>
+    </div>
+  </section>
+
+  <!-- ÚLTIMOS RESULTADOS -->
+  <section id="ultimos">
+    <div class="section-inner">
+      <p class="section-tag">Temporada 2025/2026 · Finalizada</p>
+      <h2 class="section-title">Últimos Resultados</h2>
+      <div class="section-divider"></div>
+      <div class="results-row">
+        <div class="results-col">
+          <h3>⚽ Sénior A <a href="senior.html">Ver todo →</a></h3>
+          <div class="result-item loss">
+            <div class="result-home nes">U.D. Nespereira</div>
+            <div class="result-score-wrap"><div class="result-score">2 – 4</div><div class="result-date">24/5/2026 · J34</div></div>
+            <div class="result-away">Nieves C.F.</div>
+          </div>
+          <div class="result-item loss">
+            <div class="result-home">Covelo C.F.</div>
+            <div class="result-score-wrap"><div class="result-score">2 – 1</div><div class="result-date">17/5/2026 · J33</div></div>
+            <div class="result-away nes">U.D. Nespereira</div>
+          </div>
+          <div class="result-item win">
+            <div class="result-home nes">U.D. Nespereira</div>
+            <div class="result-score-wrap"><div class="result-score">2 – 0</div><div class="result-date">10/5/2026 · J32</div></div>
+            <div class="result-away">Gondomar F.B. B</div>
+          </div>
+          <div class="result-item loss">
+            <div class="result-home">Abobriga F.C.</div>
+            <div class="result-score-wrap"><div class="result-score">4 – 1</div><div class="result-date">3/5/2026 · J31</div></div>
+            <div class="result-away nes">U.D. Nespereira</div>
+          </div>
+        </div>
+        <div class="results-col">
+          <h3>🔥 Juvenil <a href="juvenil.html">Ver todo →</a></h3>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:2rem;text-align:center;color:var(--muted);font-size:.88rem;line-height:1.7">
+            Añade aquí los resultados del<br>equipo Juvenil editando <strong style="color:var(--white)">juvenil.html</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <section id="quick">
+    <div class="section-inner">
+      <p class="section-tag">Navega por la web</p>
+      <h2 class="section-title">Descubre<br>el Club</h2>
+      <div class="section-divider"></div>
+      <div class="quick-grid">
+        <a href="club.html" class="quick-card">
+          <div class="quick-icon">🏛️</div>
+          <div class="quick-title">El Club</div>
+          <div class="quick-desc">Historia, estadio, cuerpo técnico e información del club</div>
+          <div class="quick-arrow">→</div>
+        </a>
+        <a href="senior.html" class="quick-card">
+          <div class="quick-icon">⚽</div>
+          <div class="quick-title">Sénior</div>
+          <div class="quick-desc">Plantilla, clasificación y resultados del primer equipo</div>
+          <div class="quick-arrow">→</div>
+        </a>
+        <a href="juvenil.html" class="quick-card">
+          <div class="quick-icon">🔥</div>
+          <div class="quick-title">Juvenil</div>
+          <div class="quick-desc">Plantilla, resultados y clasificación del equipo juvenil</div>
+          <div class="quick-arrow">→</div>
+        </a>
+        <a href="contacto.html" class="quick-card">
+          <div class="quick-icon">📱</div>
+          <div class="quick-title">Contacto</div>
+          <div class="quick-desc">Redes sociales, campo y cómo llegar a Chan do Arieiro</div>
+          <div class="quick-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a href="index.html" class="footer-logo"><img src="assets/logo.jpg" alt=""><span>U.D. Nespereira</span></a>
+  <p>Pazos de Borbén · Pontevedra · Galicia</p>
+  <p>© 2025/26 Unión Deportiva Nespereira</p>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>
